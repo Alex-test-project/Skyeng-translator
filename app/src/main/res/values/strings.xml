@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Translator</string>
+    <string name="search_title">Enter word</string>
+    <string name="search_hint">Поиск слов</string>
+    <string name="search_fragment_title">Переводчик</string>
+    <string name="error_retry">Повторить</string>
+    <string name="error_text">Oops! \nЧто-то пошло не так</string>
+    <string name="empty_data_state_message">По вашему запросу ничего не найдено</string>
+    <string name="start_screen_message">Введите слово для поиска</string>
+</resources>

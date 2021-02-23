@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    defaultConfig {
+        applicationId "ru.example.translator"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.code
+        versionName build_versions.name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    //For coroutine test dependency
+    packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+}
+
+dependencies {
+    implementation(
+            project(path: ':core'),
+            project(path: ':database'),
+            deps.android.kotlin,
+            deps.android.appcompat,
+            deps.android.constraint,
+            deps.android.material,
+            deps.android.cardview,
+            deps.android.recycler,
+            deps.android.coroutines,
+            //ViewModel
+            //LiveData
+            deps.view_model.ktx,
+            deps.view_model.lifecycle,
+            //Di
+            deps.di.dagger,
+            //
+            deps.utility.timber,
+            deps.image_loader.glide,
+            //Network
+            deps.requests_tools.retrofit2,
+            deps.requests_tools.ok_http,
+            deps.requests_tools.ok_http_interceptor,
+            deps.requests_tools.retrofit2_json_converter,
+            deps.requests_tools.retrofit2_coroutine_adapter
+    )
+
+    testImplementation(
+            deps.tests.mockito_kotlin,
+            deps.tests.arch_core
+    )
+
+    kapt(
+            deps.di.dagger_compiler
+    )
+}

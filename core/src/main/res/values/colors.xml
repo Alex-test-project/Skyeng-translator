@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="loading_view_first_point">#FD8A28</color>
+    <color name="loading_view_second_point">#FD6D2D</color>
+    <color name="loading_view_third_point">#FD4646</color>
+    <color name="loading_view_fourth_point">#FD2064</color>
+    <color name="loading_view_fifth_point">#FE007E</color>
+</resources>
