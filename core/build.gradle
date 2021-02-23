@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation(
+            project(path: ':database'),
+            deps.android.kotlin,
+            deps.android.appcompat,
+            deps.android.recycler,
+            deps.view_model.ktx,
+            deps.image_loader.glide,
+            //Di
+            deps.di.dagger,
+            //Network
+            deps.requests_tools.retrofit2,
+            deps.requests_tools.ok_http,
+            deps.requests_tools.ok_http_interceptor,
+            deps.requests_tools.retrofit2_json_converter,
+            deps.requests_tools.retrofit2_coroutine_adapter,
+            //DB
+            deps.data_base.room,
+            //Test
+            deps.tests.junit,
+            deps.tests.coroutines
+    )
+
+    kapt(
+            deps.di.dagger_compiler
+    )
+}

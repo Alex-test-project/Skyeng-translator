@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvWordInfoImage"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/common_dimen_8"
+    android:layout_marginBottom="@dimen/common_dimen_16"
+    app:cardCornerRadius="@dimen/common_dimen_16"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/word_info"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWordInfoImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/word_info_height"
+            android:background="@android:color/white"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWordInfoLoaderImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/word_info_height"
+            android:scaleType="fitXY"
+            android:background="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPlayBtn"
+            android:layout_width="@dimen/common_dimen_32"
+            android:layout_height="@dimen/common_dimen_32"
+            android:layout_marginTop="@dimen/common_dimen_16"
+            android:layout_marginEnd="@dimen/common_dimen_16"
+            android:background="@drawable/play_btn_background"
+            android:elevation="4dp"
+            android:src="@drawable/ic_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivWordInfoImage"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWordInfoText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_dimen_16"
+            android:layout_marginHorizontal="@dimen/common_dimen_8"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivPlayBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivWordInfoImage"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Info" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWordInfoTranslation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_dimen_8"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWordInfoText"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Translation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWordInfoTranscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/common_dimen_8"
+            android:layout_marginTop="@dimen/common_dimen_8"
+            android:layout_marginBottom="@dimen/common_dimen_8"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWordInfoTranslation"
+            tools:text="Transcription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
